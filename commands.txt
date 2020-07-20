@@ -1,0 +1,15 @@
+#Ingress
+#Read doc for pod,service
+
+
+
+kubectl describe pod <podname>
+kubectl get po --show-labels
+
+
+#connect to pod(same as docker)
+kubectl -it exec webapp 
+
+
+kubectl rollout history deploy webapp-depl
+kubectl rollout undo deploy webapp --to-revision=2

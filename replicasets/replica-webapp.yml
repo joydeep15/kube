@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: webapp-rs
+
+spec:
+  selector:
+    matchLabels:
+      app: webapp
+      # version: "1"
+  replicas: 1
+
+
+  template:
+    metadata:
+      labels:
+        app: webapp
+        # version: "1"
+    spec:
+      containers:
+      - name: webapp-v1
+        image: richardchesterwood/k8s-fleetman-webapp-angular:release0-5
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
